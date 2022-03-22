@@ -22,3 +22,5 @@ def main():
         time.sleep(1)
         timer += 1
     main()
+
+booty lol john xena
