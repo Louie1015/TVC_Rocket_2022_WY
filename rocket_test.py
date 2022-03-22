@@ -23,4 +23,3 @@ def main():
         timer += 1
     main()
 
-booty lol john xena
