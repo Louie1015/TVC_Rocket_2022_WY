@@ -18,6 +18,7 @@ MAX_THRUST = 15 #newtons
 g = -9.81 #gravity
 V_i = 0 #velocity
 Y_i = 0 #height
+BURNTIME = 1.7 #seconds
 
 
 
@@ -80,4 +81,13 @@ class Rocket(object):
 def main():
     sim = Simulation()
     sim.cycle()
-
+    
+while TIMER <= BURNTIME: #Physics, takes values to calculate first position after rocket motor burns, then 
+    total_force = (MAX_THRUST-(MASS*gravity))
+    acceleration = total_force/MASS
+    velocity = acceleration * TIMER
+    position = velocity * TIMER
+while TIMER > BURNTIME:
+    acceleration = -(velocity)/(TIMER - BURNTIME)
+    velocity2 = velocity + (acceleration * TIMER)
+    position2 = position + (velocity2 * TIMER)
